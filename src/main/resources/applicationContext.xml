@@ -8,14 +8,24 @@
     http://www.springframework.org/schema/context/spring-context.xsd">
 
     <!-- Define your beans here -->
+    <bean id="myFortuneService"
+          class="com.personal.gaurav.springdemo.HappyFortuneService">
+    </bean>
+
     <bean   id="myCoach"
-            class="com.personal.gaurav.springdemo.BasketballCoach">
+            class="com.personal.gaurav.springdemo.TrackCoach">
             <!--by changing coach class here, we can dynamically change the object being created by Spring container -->
+        <constructor-arg ref="myFortuneService" />
+        <!--ref should match the dependency bean name-->
+        <!--
+        Step 1: Spring creates a bean with name myFortuneService which is an instance of HappyFortuneService
+        Interface names not allowed as they cant be instantiated. Something like below happens:
+        HappyFortuneService myFortuneService = new HappyFortuneService();
+        Step 2: Spring creates a bean with name myCoach which is an instance of TrackCoach
+        Since we have specified a dependency through a ref, Spring will inject the specified dependency to create a coach object
+        Something like below happens:
+        TrackCoach myCoach = new TrackCoach(myFortuneService);
+        -->
     </bean>
     
 </beans>
-
-
-
-
-
