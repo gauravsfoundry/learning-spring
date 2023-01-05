@@ -15,16 +15,18 @@
     <bean   id="myCoach"
             class="com.personal.gaurav.springdemo.TrackCoach">
             <!--by changing coach class here, we can dynamically change the object being created by Spring container -->
-        <constructor-arg ref="myFortuneService" />
+        <property name="fortuneService" ref="myFortuneService" />
         <!--ref should match the dependency bean name-->
         <!--
         Step 1: Spring creates a bean with name myFortuneService which is an instance of HappyFortuneService
         Interface names not allowed as they cant be instantiated. Something like below happens:
         HappyFortuneService myFortuneService = new HappyFortuneService();
         Step 2: Spring creates a bean with name myCoach which is an instance of TrackCoach
-        Since we have specified a dependency through a ref, Spring will inject the specified dependency to create a coach object
+        Since we have specified a dependency through a ref, Spring will inject the specified dependency through
+        setter methods (instead of constructor) to create a coach object
         Something like below happens:
-        TrackCoach myCoach = new TrackCoach(myFortuneService);
+        TrackCoach myCoach = new TrackCoach();
+        myCoach.setFortuneService(myFortuneService)
         -->
     </bean>
     

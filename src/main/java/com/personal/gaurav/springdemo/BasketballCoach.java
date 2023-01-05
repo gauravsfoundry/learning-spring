@@ -3,7 +3,7 @@ package com.personal.gaurav.springdemo;
 public class BasketballCoach implements Coach {
     private FortuneService fortuneService;
 
-    public BasketballCoach(FortuneService fortuneService){
+    public void setFortuneService(FortuneService fortuneService) {
         this.fortuneService = fortuneService;
     }
 
