@@ -7,6 +7,7 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <context:property-placeholder location="application.properties" />
     <!-- Define your beans here -->
     <bean id="myFortuneService"
           class="com.personal.gaurav.springdemo.HappyFortuneService">
@@ -28,9 +29,9 @@
         TrackCoach myCoach = new TrackCoach();
         myCoach.setFortuneService(myFortuneService)
         -->
-        <!--By passing values instead of ref, we can set values of instance variables through setters -->
-        <property name="emailAddress" value="myemail@mydomain.com" />
-        <property name="teamName" value="My Awesome Team" />
+        <!--By specifying context:property-placeholder, we can read literal values from a properties file rather than hard coding them -->
+        <property name="emailAddress" value="${myEmailAddress}" />
+        <property name="teamName" value="${myTeamName}" />
     </bean>
     
 </beans>
