@@ -28,6 +28,9 @@
         TrackCoach myCoach = new TrackCoach();
         myCoach.setFortuneService(myFortuneService)
         -->
+        <!--By passing values instead of ref, we can set values of instance variables through setters -->
+        <property name="emailAddress" value="myemail@mydomain.com" />
+        <property name="teamName" value="My Awesome Team" />
     </bean>
     
 </beans>
