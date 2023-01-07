@@ -7,7 +7,6 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <context:property-placeholder location="application.properties" />
     <!-- Define your beans here -->
     <bean id="myFortuneService"
           class="com.personal.gaurav.springdemo.HappyFortuneService">
@@ -23,15 +22,12 @@
         Interface names not allowed as they cant be instantiated. Something like below happens:
         HappyFortuneService myFortuneService = new HappyFortuneService();
         Step 2: Spring creates a bean with name myCoach which is an instance of TrackCoach
-        Since we have specified a dependency through a ref, Spring will inject the specified dependency through
-        setter methods (instead of constructor) to create a coach object
+        Since we have specified a dependency through a ref, Spring will inject the specified dependency either through
+        setter methods or constructor to create a coach object
         Something like below happens:
-        TrackCoach myCoach = new TrackCoach();
-        myCoach.setFortuneService(myFortuneService)
+        TrackCoach myCoach = new TrackCoach(); OR TrackCoach myCoach = new TrackCoach(myFortuneService);
+        myCoach.setFortuneService(myFortuneService) (If setter injection is used)
         -->
-        <!--By specifying context:property-placeholder, we can read literal values from a properties file rather than hard coding them -->
-        <property name="emailAddress" value="${myEmailAddress}" />
-        <property name="teamName" value="${myTeamName}" />
     </bean>
     
 </beans>

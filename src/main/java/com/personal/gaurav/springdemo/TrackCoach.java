@@ -14,24 +14,29 @@ public class TrackCoach implements Coach {
     }
 
     public void setEmailAddress(String emailAddress) {
+
         this.emailAddress = emailAddress;
     }
 
     public void setTeamName(String teamName) {
+
         this.teamName = teamName;
     }
 
     public void setFortuneService(FortuneService fortuneService) {
+
         this.fortuneService = fortuneService;
     }
 
     @Override
     public String getDailyWorkout(){
+
         return "Run a hard 5K";
     }
 
     @Override
     public String getDailyFortune() {
+
         return "TrackCoach is telling you: " + fortuneService.getFortune();
     }
 
