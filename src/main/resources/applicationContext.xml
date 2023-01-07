@@ -14,7 +14,8 @@
 
     <bean   id="myCoach"
             class="com.personal.gaurav.springdemo.TrackCoach"
-            scope="prototype">
+            init-method="myStartupMethod"
+            destroy-method="myExitMethod" >
             <!--by changing coach class above, we can dynamically change the object being created by Spring container -->
 
         <property name="fortuneService" ref="myFortuneService" />

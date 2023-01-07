@@ -40,4 +40,11 @@ public class TrackCoach implements Coach {
         return "TrackCoach is telling you: " + fortuneService.getFortune();
     }
 
+    public void myStartupMethod(){
+        System.out.println("Inside TrackCoach init method");
+    }
+
+    public void myExitMethod(){
+        System.out.println("Inside TrackCoach destroy method");
+    }
 }
