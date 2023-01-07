@@ -13,8 +13,10 @@
     </bean>
 
     <bean   id="myCoach"
-            class="com.personal.gaurav.springdemo.TrackCoach">
-            <!--by changing coach class here, we can dynamically change the object being created by Spring container -->
+            class="com.personal.gaurav.springdemo.TrackCoach"
+            scope="prototype">
+            <!--by changing coach class above, we can dynamically change the object being created by Spring container -->
+
         <property name="fortuneService" ref="myFortuneService" />
         <!--ref should match the dependency bean name-->
         <!--
