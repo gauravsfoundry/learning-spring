@@ -2,7 +2,7 @@ package com.personal.gaurav.springdemo;
 
 import org.springframework.stereotype.Component;
 
-@Component("myTennisCoach") //Specifying bean id along with annotation. If omitted, bean id is class name with first letter converted to small case i.e. tennisCoach
+@Component //Omitted bean id with annotation. Bean id is class name with first letter converted to small case i.e. tennisCoach
 public class TennisCoach implements Coach {
 
     @Override
