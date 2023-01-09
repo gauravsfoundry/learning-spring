@@ -3,9 +3,9 @@ package com.personal.gaurav.springdemo;
 import org.springframework.stereotype.Component;
 
 @Component
-public class HappyFortuneService implements FortuneService {
+public class DatabaseFortuneService implements FortuneService {
     @Override
     public String getFortune() {
-        return "Today is your lucky day!";
+        return "This fortune is coming from a DB!";
     }
 }

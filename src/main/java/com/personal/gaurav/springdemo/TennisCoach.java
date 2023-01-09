@@ -1,12 +1,14 @@
 package com.personal.gaurav.springdemo;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component //Omitted bean id with annotation. Bean id is class name with first letter converted to small case i.e. tennisCoach
 public class TennisCoach implements Coach {
 
     @Autowired
+    @Qualifier("randomFortuneService") //using default bean name
     private FortuneService fortuneService;
 
     @Override
