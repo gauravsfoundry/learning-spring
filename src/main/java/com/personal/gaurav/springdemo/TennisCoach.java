@@ -6,13 +6,9 @@ import org.springframework.stereotype.Component;
 @Component //Omitted bean id with annotation. Bean id is class name with first letter converted to small case i.e. tennisCoach
 public class TennisCoach implements Coach {
 
+    @Autowired
     private FortuneService fortuneService;
 
-    @Autowired
-    public void anotherSetterMethod(FortuneService fortuneService){
-
-        this.fortuneService = fortuneService;
-    }
     @Override
     public String getDailyWorkout() {
 
