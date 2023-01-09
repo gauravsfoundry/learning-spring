@@ -1,7 +1,10 @@
 package com.personal.gaurav.springdemo;
 
+import org.springframework.stereotype.Component;
+
 import java.util.Random;
 
+@Component
 public class HappyFortuneService implements FortuneService {
 
     String[] fortuneList = {
@@ -13,6 +16,7 @@ public class HappyFortuneService implements FortuneService {
 
     @Override
     public String getFortune() {
-        return fortuneList[rand.nextInt(3)];
+
+        return fortuneList[rand.nextInt(fortuneList.length)];
     }
 }
