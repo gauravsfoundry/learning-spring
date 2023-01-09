@@ -8,7 +8,7 @@ public class BaseballCoach implements Coach {
     private FortuneService fortuneService;
 
     @Autowired
-    public BaseballCoach(FortuneService fortuneService){
+    public void setFortuneService(FortuneService fortuneService){
         this.fortuneService = fortuneService;
     }
 
