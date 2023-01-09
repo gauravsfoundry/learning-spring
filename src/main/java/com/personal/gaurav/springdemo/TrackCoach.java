@@ -8,7 +8,7 @@ public class TrackCoach implements Coach {
     private FortuneService fortuneService;
 
     @Autowired
-    public void setFortuneService(FortuneService fortuneService) {
+    public void anotherSetterMethod(FortuneService fortuneService) {
 
         this.fortuneService = fortuneService;
     }
