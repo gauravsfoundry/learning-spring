@@ -16,11 +16,13 @@ public class MyApp {
         However, there are some slight differences than normal casting. From the Spring docs: Behaves the same as getBean(String), but provides
         a measure of type safety by throwing a BeanNotOfRequiredTypeException if the bean is not of the required type. This means that ClassCastException
         can't be thrown on casting the result correctly, as can happen with getBean(String)*/
-        Coach theCoach = context.getBean("baseballCoach", Coach.class); //Using default bean name
+        TennisCoach theCoach = context.getBean("tennisCoach", TennisCoach.class); //Using default bean name; casting to class instead of interface because of additional methods in class
         
         //call methods on bean
         System.out.println("theCoach.getDailyWorkout() = " + theCoach.getDailyWorkout());
         System.out.println("theCoach.getDailyFortune() = " + theCoach.getDailyFortune());
+        System.out.println("theCoach.getEmailAddress() = " + theCoach.getEmailAddress());
+        System.out.println("theCoach.getTeamName() = " + theCoach.getTeamName());
 
         //close the context
         context.close();
