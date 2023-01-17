@@ -1,11 +1,16 @@
 package com.personal.gaurav.springdemo;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 
 public class SwimCoach implements Coach {
 
     private FortuneService fortuneService;
+
+    @Value("${myEmailAddress}")
+    private String emailAddress;
+
+    @Value("${myTeamName}")
+    private String teamName;
 
     public SwimCoach(FortuneService fortuneService){
         this.fortuneService = fortuneService;
@@ -19,6 +24,14 @@ public class SwimCoach implements Coach {
     @Override
     public String getDailyFortune() {
 
-        return fortuneService.getFortune();
+        return "SwimCoach is telling you: " + fortuneService.getFortune();
+    }
+
+    public String getEmailAddress() {
+        return emailAddress;
+    }
+
+    public String getTeamName() {
+        return teamName;
     }
 }
