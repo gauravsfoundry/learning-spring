@@ -1,6 +1,6 @@
 package com.personal.gaurav.springdemo;
 
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -11,7 +11,7 @@ public class MyApp {
     public static void main(String[] args) {
         
         //create application context which is an abstraction for container 
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SportConfig.class);
         
         //retrieve a bean from the Spring container
         /*second parameter (interface name) is optional. When we pass the interface to the method, behind the scenes Spring will cast the object.
